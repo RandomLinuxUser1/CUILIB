@@ -467,7 +467,8 @@ local loading = {} do
     local instances = {}
     
     local overlay = Instance.new('Frame') do
-        overlay.BackgroundColor3 = theme.Window2
+        -- full-screen solid overlay to cover all Roblox UI while loading
+        overlay.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
         overlay.BackgroundTransparency = 0
         overlay.BorderSizePixel = 0
         overlay.Name = '#loading-overlay'
@@ -484,7 +485,7 @@ local loading = {} do
         centerContainer.BorderSizePixel = 0
         centerContainer.Name = '#center'
         centerContainer.Position = UDim2.fromScale(0.5, 0.5)
-        centerContainer.Size = UDim2.fromOffset(320, 140)
+        centerContainer.Size = UDim2.fromOffset(420, 220)
         centerContainer.ZIndex = 9001
 
         centerContainer.Parent = overlay
@@ -497,10 +498,10 @@ local loading = {} do
         logo.Font = 'RobotoCondensed'
         logo.Name = '#logo'
         logo.Position = UDim2.fromScale(0.5, 0)
-        logo.Size = UDim2.fromOffset(80, 60)
+        logo.Size = UDim2.fromOffset(140, 100)
         logo.Text = 'V'
         logo.TextColor3 = theme.Primary
-        logo.TextSize = 54
+        logo.TextSize = 90
         logo.TextStrokeColor3 = theme.TextStroke
         logo.TextStrokeTransparency = 0.4
         logo.ZIndex = 9002
@@ -523,8 +524,8 @@ local loading = {} do
         barBackground.BorderMode = 'Inset'
         barBackground.BorderSizePixel = 1
         barBackground.Name = '#bar-background'
-        barBackground.Position = UDim2.fromScale(0.5, 0.55)
-        barBackground.Size = UDim2.fromOffset(260, 10)
+        barBackground.Position = UDim2.fromScale(0.5, 0.6)
+        barBackground.Size = UDim2.fromOffset(360, 18)
         barBackground.ZIndex = 9002
 
         barBackground.Parent = centerContainer
@@ -578,11 +579,11 @@ local loading = {} do
         statusText.BorderSizePixel = 0
         statusText.Font = 'SourceSans'
         statusText.Name = '#status'
-        statusText.Position = UDim2.fromScale(0.5, 0.75)
-        statusText.Size = UDim2.fromOffset(260, 20)
+        statusText.Position = UDim2.fromScale(0.5, 0.72)
+        statusText.Size = UDim2.fromOffset(360, 26)
         statusText.Text = 'Loading UI...'
         statusText.TextColor3 = theme.TextDim
-        statusText.TextSize = 14
+        statusText.TextSize = 18
         statusText.TextStrokeColor3 = theme.TextStroke
         statusText.TextStrokeTransparency = 0.85
         statusText.TextWrapped = true
@@ -625,9 +626,10 @@ function loading.start()
     task.spawn(function()
         while loading.active and barFill do
             barFill.Size = UDim2.new(0, 0, 1, 0)
-            local tw = tween(barFill, {Size = UDim2.new(1, 0, 1, 0)}, 0.9, 1)
+            -- slower bar fill so loading feels more substantial
+            local tw = tween(barFill, {Size = UDim2.new(1, 0, 1, 0)}, 1.8, 1)
             tw.Completed:Wait()
-            task.wait(0.05)
+            task.wait(0.15)
         end
     end)
 
@@ -636,7 +638,7 @@ function loading.start()
         while loading.active and statusText do
             i = (i % #statuses) + 1
             statusText.Text = statuses[i]
-            task.wait(0.6)
+            task.wait(1)
         end
     end)
 end
@@ -653,7 +655,7 @@ function loading.stop()
 
     task.spawn(function()
         -- random fake delay so the loading animation feels more substantial
-        local extraDelay = math.random(8, 20) / 10 -- 0.8s - 2.0s
+        local extraDelay = math.random(25, 60) / 10 -- 2.5s - 6.0s
         task.wait(extraDelay)
 
         local backgroundTransparency = {}
