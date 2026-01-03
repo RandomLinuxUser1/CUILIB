@@ -259,7 +259,8 @@ local function createLoadingGui()
     infoLabel.BackgroundTransparency = 1
     infoLabel.BorderSizePixel = 0
     infoLabel.Font = Enum.Font.SourceSans
-    infoLabel.Position = UDim2.fromOffset(0, 58)
+    -- centered under the buttons
+    infoLabel.Position = UDim2.new(0.5, 0, 0, 58)
     infoLabel.Size = UDim2.fromOffset(360, 18)
     infoLabel.Text = "Enter your key to continue."
     infoLabel.TextColor3 = palette.text
@@ -277,6 +278,7 @@ local function createLoadingGui()
     return {
         screen = uiScreen,
         overlay = overlay,
+        barBackground = barBackground,
         barFill = barFill,
         statusText = statusText,
         keyContainer = keyContainer,
@@ -457,6 +459,7 @@ return function(...)
     waitForValidKey(instances)
 
     -- show bar + status and start animation
+    if instances.barBackground then instances.barBackground.Visible = true end
     if instances.barFill then instances.barFill.Visible = true end
     if instances.statusText then instances.statusText.Visible = true end
 
