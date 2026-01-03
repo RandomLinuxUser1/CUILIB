@@ -1,6 +1,4 @@
--- CUILIB loader.lua
--- Shows a loading splash, then fetches and loads the main UI library with the
--- same arguments the user passed to this loader.
+-- Loader for CUILIB
 
 local runService = game:GetService("RunService")
 
@@ -21,7 +19,7 @@ local function createLoadingGui()
 
     local overlay = Instance.new("Frame")
     overlay.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-    overlay.BackgroundTransparency = 0.1
+    overlay.BackgroundTransparency = 1 -- fully transparent; no screen tint
     overlay.BorderSizePixel = 0
     overlay.Size = UDim2.fromScale(1, 1)
     overlay.ZIndex = 9000
@@ -116,8 +114,8 @@ local function playLoadingAnimation(instances)
     local statuses = {
         "Loading themes...",
         "Loading UI...",
-        "Initializing controls...",
-        "Binding hotkeys...",
+        "Initializing Animations...",
+        "Starting keybind service...",
         "Finalizing...",
     }
 
@@ -154,9 +152,12 @@ local function playLoadingAnimation(instances)
     end
 end
 
-local function fadeOutAndDestroy(instances)
+local function fadeOutAndDestroy(instances, stopAnim)
     local overlay = instances.overlay
-    if not overlay then return end
+    if not overlay then
+        if stopAnim then stopAnim() end
+        return
+    end
 
     local extraDelay = math.random(25, 60) / 10 -- 2.5s - 6.0s
     task.wait(extraDelay)
@@ -170,6 +171,9 @@ local function fadeOutAndDestroy(instances)
             con:Disconnect()
             if instances.screen then
                 instances.screen:Destroy()
+            end
+            if stopAnim then
+                stopAnim()
             end
         end
     end)
@@ -203,8 +207,10 @@ return function(...)
         task.wait()
     end
 
-    stopAnim()
-    fadeOutAndDestroy(instances)
+    -- keep the status text + bar animating during the extra random delay and
+    -- fade-out; stopAnim is called from inside fadeOutAndDestroy once the
+    -- overlay is gone.
+    fadeOutAndDestroy(instances, stopAnim)
 
     return ui
 end
