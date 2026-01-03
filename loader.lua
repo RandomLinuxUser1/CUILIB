@@ -1,5 +1,5 @@
 -- Loader for CUILIB
-
+print("Loading ts")
 local runService = game:GetService("RunService")
 
 local args = {...}
