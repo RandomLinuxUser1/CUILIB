@@ -217,20 +217,20 @@ local function playLoadingAnimation(instances)
 
     local running = true
 
-    -- bar fill loop
+    -- bar fill: single smooth pass from 0 -> 100%
     task.spawn(function()
+        local duration = 4 -- seconds for full bar
+        local t0 = tick()
         while running and barFill do
-            barFill.Size = UDim2.new(0, 0, 1, 0)
-            local t0 = tick()
-            local duration = 1.8
-            while running and tick() - t0 < duration do
-                local alpha = (tick() - t0) / duration
-                barFill.Size = UDim2.new(alpha, 0, 1, 0)
-                runService.RenderStepped:Wait()
+            local elapsed = tick() - t0
+            local alpha = math.clamp(elapsed / duration, 0, 1)
+            barFill.Size = UDim2.new(alpha, 0, 1, 0)
+            if alpha >= 1 then
+                break
             end
-            barFill.Size = UDim2.new(1, 0, 1, 0)
-            task.wait(0.15)
+            runService.RenderStepped:Wait()
         end
+        -- when loop exits, bar stays at its last size (usually full)
     end)
 
     -- status text loop
@@ -303,9 +303,14 @@ return function(...)
         task.wait()
     end
 
-    -- keep the status text + bar animating during the extra random delay and
-    -- fade-out; stopAnim is called from inside fadeOutAndDestroy once the
-    -- overlay is gone.
+    -- jump bar to full once load completes (in case the duration hasn't elapsed yet)
+    if instances.barFill then
+        instances.barFill.Size = UDim2.new(1, 0, 1, 0)
+    end
+
+    -- keep the status text + (now-full) bar animating during the extra random
+    -- delay and fade-out; stopAnim is called from inside fadeOutAndDestroy once
+    -- the overlay is gone.
     fadeOutAndDestroy(instances, stopAnim)
 
     return ui
