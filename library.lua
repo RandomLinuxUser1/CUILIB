@@ -467,9 +467,9 @@ local loading = {} do
     local instances = {}
     
     local overlay = Instance.new('Frame') do
-        -- full-screen solid overlay to cover all Roblox UI while loading
+        -- invisible full-screen container; only the centered loading box is visible
         overlay.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-        overlay.BackgroundTransparency = 0
+        overlay.BackgroundTransparency = 1
         overlay.BorderSizePixel = 0
         overlay.Name = '#loading-overlay'
         overlay.Size = UDim2.fromScale(1, 1)
@@ -1055,7 +1055,7 @@ local hint = {} do
 end
 
 
-local defaultWinPos = UDim2.fromScale(0.6, 0.6)
+local defaultWinPos = UDim2.fromScale(0.5, 0.5)
 
 local ui = {}
 
