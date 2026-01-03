@@ -481,8 +481,11 @@ local loading = {} do
 
     local centerContainer = Instance.new('Frame') do
         centerContainer.AnchorPoint = Vector2.new(0.5, 0.5)
-        centerContainer.BackgroundTransparency = 1
-        centerContainer.BorderSizePixel = 0
+        centerContainer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        centerContainer.BackgroundTransparency = 0
+        centerContainer.BorderColor3 = theme.Inset2
+        centerContainer.BorderMode = 'Inset'
+        centerContainer.BorderSizePixel = 1
         centerContainer.Name = '#center'
         centerContainer.Position = UDim2.fromScale(0.5, 0.5)
         centerContainer.Size = UDim2.fromOffset(420, 220)
@@ -601,12 +604,14 @@ local loading = {} do
 end
 
 loading.active = false
+loading.finished = false
 
 function loading.start()
     if (loading.active) then return end
     if (not loading.instances) then return end
 
     loading.active = true
+    loading.finished = false
 
     local barFill = loading.instances.barFill
     local statusText = loading.instances.statusText
@@ -699,6 +704,84 @@ function loading.stop()
         animCon:Disconnect()
         overlay:Destroy()
         loading.instances = nil
+        loading.finished = true
+
+        -- after loading box is gone, reveal any hidden windows with a simple fade-in
+        if ui and ui.windows then
+            for _, win in ipairs(ui.windows) do
+                local mf = win.instances and win.instances.mainFrame
+                if mf and not mf.Visible then
+                    mf.Visible = true
+
+                    task.spawn(function()
+                        local bgT, imgT, txtT, strokeT = {}, {}, {}, {}
+
+                        local map = {
+                            Frame = {bgT},
+                            ImageButton = {bgT, imgT},
+                            ImageLabel = {bgT, imgT},
+                            TextButton = {bgT, txtT},
+                            TextLabel = {bgT, txtT},
+                            TextBox = {bgT, txtT},
+                            ScrollingFrame = {bgT},
+                            UIStroke = {strokeT},
+                        }
+
+                        local desc = mf:GetDescendants()
+                        table.insert(desc, mf)
+
+                        for _, v in ipairs(desc) do
+                            local a = map[v.ClassName]
+                            if a then
+                                for i = 1, #a do
+                                    table.insert(a[i], v)
+                                end
+                            end
+                        end
+
+                        for _, v in ipairs(bgT) do v.BackgroundTransparency = 1 end
+                        for _, v in ipairs(imgT) do v.ImageTransparency = 1 end
+                        for _, v in ipairs(txtT) do v.TextTransparency = 1 end
+                        for _, v in ipairs(strokeT) do v.Transparency = 1 end
+
+                        local fadeCon
+                        fadeCon = renderService.RenderStepped:Connect(function(dt)
+                            dt *= 4
+                            local done = true
+
+                            for _, v in ipairs(bgT) do
+                                if v.BackgroundTransparency > 0 then
+                                    v.BackgroundTransparency = math.max(0, v.BackgroundTransparency - dt)
+                                    if v.BackgroundTransparency > 0 then done = false end
+                                end
+                            end
+                            for _, v in ipairs(imgT) do
+                                if v.ImageTransparency > 0 then
+                                    v.ImageTransparency = math.max(0, v.ImageTransparency - dt)
+                                    if v.ImageTransparency > 0 then done = false end
+                                end
+                            end
+                            for _, v in ipairs(txtT) do
+                                if v.TextTransparency > 0 then
+                                    v.TextTransparency = math.max(0, v.TextTransparency - dt)
+                                    if v.TextTransparency > 0 then done = false end
+                                end
+                            end
+                            for _, v in ipairs(strokeT) do
+                                if v.Transparency > 0 then
+                                    v.Transparency = math.max(0, v.Transparency - dt)
+                                    if v.Transparency > 0 then done = false end
+                                end
+                            end
+
+                            if done then
+                                fadeCon:Disconnect()
+                            end
+                        end)
+                    end)
+                end
+            end
+        end
     end)
 end
 
@@ -1890,6 +1973,12 @@ do
                 end
                 -- finalize stuff
                 instances.mainFrame.Parent = uiScreen
+
+                -- if loading splash is active, keep window hidden until loading completes
+                if loading and (loading.active or not loading.finished) then
+                    instances.mainFrame.Visible = false
+                end
+
                 new.instances = instances
                 return new
             end
