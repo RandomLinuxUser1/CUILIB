@@ -1,3 +1,488 @@
--- Lets not skid the api, yeah?
+-- Loader for CUILIB
 
-local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit ;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v18,v19) local v20={};for v195=1, #v18 do v6(v20,v0(v4(v1(v2(v18,v195,v195 + 1 )),v1(v2(v19,1 + (v195% #v19) ,1 + (v195% #v19) + 1 )))%256 ));end return v5(v20);end local v8=game:GetService(v7("\227\214\213\22\227\169\209\23\210\198","\126\177\163\187\69\134\219\167"));local v9={...};local v10=true;local v11=v7("\43\217\62\213\239\121\130\101\213\253\48\217\47\199\245\45\131\41\202\241\108\223\43\210\179\58\230\56\235\216\4\221\41","\156\67\173\74\165");local v12=v7("\60\163\93\6\175\124\9\123\179\64\5\191\41\84\48\249\78\17\243\53\64\51\134\30\15\190\46\78\21","\38\84\215\41\118\220\70");local function v13() local v21=0;local v22;local v23;local v24;while true do local v196=0 -0 ;while true do if (v196==(1 -0)) then if (v21==(1 + 1)) then if (v24==v7("\74\74\5\55\91\91","\69\41\34\96")) then local v215=0 -0 ;while true do if (v215==(1251 -(721 + 530))) then v22.primary=Color3.fromRGB(1520 -(945 + 326) ,54 -32 ,1626 -(1281 + 293) );v22.secondary=Color3.fromRGB(220 + 27 ,288 -(28 + 238) ,849 -(271 + 429) );v215=1 + 0 ;end if (v215==(1501 -(1408 + 92))) then v22.window2=Color3.fromRGB(1091 -(461 + 625) ,1293 -(993 + 295) ,1 + 4 );v22.window3=Color3.fromRGB(1179 -(418 + 753) ,7 + 1 ,4 + 4 );v215=1 + 1 ;end if (v215==(1 + 1)) then v22.text=Color3.fromRGB(634 -(381 + 89) ,146 + 18 ,48 + 116 );break;end end elseif (v24==v7("\179\209\214\4\5\46","\75\220\163\183\106\98")) then v22.primary=Color3.fromRGB(62 + 182 ,677 -(406 + 123) ,1791 -(1749 + 20) );v22.secondary=Color3.fromRGB(59 + 188 ,1821 -(214 + 1570) ,22);v22.window2=Color3.fromRGB(1332 -(1249 + 73) ,4 + 6 ,1157 -(466 + 679) );v22.window3=Color3.fromRGB(35 -20 ,7 + 8 ,48 -31 );v22.text=Color3.fromRGB(2092 -(106 + 1794) ,61 + 131 ,49 + 143 );elseif (v24==v7("\14\191\134\56\215","\185\98\218\235\87")) then v22.primary=Color3.fromRGB(1946 -(1668 + 58) ,881 -(512 + 114) ,194 -128 );v22.secondary=Color3.fromRGB(628 -396 ,287 -(4 + 110) ,609 -(57 + 527) );v22.window2=Color3.fromRGB(1447 -(41 + 1386) ,20,123 -(17 + 86) );v22.window3=Color3.fromRGB(17 + 8 ,55 -30 ,22 + 3 );v22.text=Color3.fromRGB(555 -363 ,358 -(122 + 44) ,330 -138 );elseif (v24==v7("\199\53\42\227","\202\171\92\71\134\190")) then v22.primary=Color3.fromRGB(33,845 -590 ,98 + 22 );v22.secondary=Color3.fromRGB(120,37 + 218 ,66 -33 );v22.window2=Color3.fromRGB(89 -(30 + 35) ,17 + 7 ,1283 -(1043 + 214) );v22.window3=Color3.fromRGB(105 -77 ,22 + 6 ,1242 -(323 + 889) );v22.text=Color3.fromRGB(516 -324 ,772 -(361 + 219) ,512 -(53 + 267) );elseif (v24==v7("\59\192\63\152\43\196\62\154\48","\232\73\161\76")) then local v238=0 + 0 ;local v239;while true do if (v238==(413 -(15 + 398))) then v239=982 -(18 + 964) ;while true do if (v239==(1 + 1)) then v22.text=Color3.fromRGB(722 -530 ,112 + 80 ,121 + 71 );break;end if (v239==(851 -(20 + 830))) then v22.window2=Color3.fromRGB(15 + 4 ,145 -(116 + 10) ,101 -80 );v22.window3=Color3.fromRGB(1642 -(1427 + 192) ,2 + 21 ,763 -(542 + 196) );v239=3 -1 ;end if (v239==(0 + 0)) then v22.primary=Color3.fromRGB(0 + 0 ,69 + 121 ,116 + 139 );v22.secondary=Color3.fromRGB(326 -(192 + 134) ,671 -416 ,487 -297 );v239=1552 -(1126 + 425) ;end end break;end end elseif (v24==v7("\185\213\87\88\28\190\203\80\68","\126\219\185\34\61")) then local v240=405 -(118 + 287) ;while true do if (v240==(7 -5)) then v22.text=Color3.fromRGB(168,1289 -(118 + 1003) ,491 -323 );break;end if (v240==0) then v22.primary=Color3.fromRGB(85 + 6 ,454 -(142 + 235) ,800 -(83 + 468) );v22.secondary=Color3.fromRGB(589 -459 ,17 + 59 ,1224 -(553 + 424) );v240=1 -0 ;end if (v240==(1 -0)) then v22.window2=Color3.fromRGB(337 -(45 + 280) ,11 + 1 ,15);v22.window3=Color3.fromRGB(14 + 1 ,15 + 0 ,18);v240=2 + 0 ;end end elseif (v24==v7("\11\220\95\98\123","\135\108\174\62\18\30\23\147")) then local v241=0 + 0 ;while true do if (v241==2) then v22.text=Color3.fromRGB(32 + 42 ,1953 -(340 + 1571) ,122);break;end if (v241==(1 + 0)) then v22.window2=Color3.fromRGB(21 -11 ,27 -17 ,22 -12 );v22.window3=Color3.fromRGB(5 + 10 ,41 -26 ,72 -57 );v241=755 -(239 + 514) ;end if ((0 + 0)==v241) then v22.primary=Color3.fromRGB(61 + 73 ,53,1584 -(797 + 532) );v22.secondary=Color3.fromRGB(205 + 6 ,39 + 14 ,491 -(46 + 190) );v241=1;end end elseif (v24==v7("\187\224\46\197\17\169\59\211","\167\214\137\74\171\120\206\83")) then v22.primary=Color3.fromRGB(34 + 66 ,423 -243 ,1457 -(373 + 829) );v22.secondary=Color3.fromRGB(51 + 129 ,120,1572 -(1114 + 203) );v22.window2=Color3.fromRGB(735 -(476 + 255) ,1 + 3 ,12);v22.window3=Color3.fromRGB(1136 -(369 + 761) ,669 -(174 + 489) ,15);v22.text=Color3.fromRGB(81 + 59 ,2045 -(830 + 1075) ,308 -138 );elseif (v24==v7("\142\253\55\79\249\171\143","\199\235\144\82\61\152")) then local v262=1269 -(231 + 1038) ;while true do if (v262==(0 -0)) then v22.primary=Color3.fromRGB(284 -(64 + 174) ,30 + 174 ,166 -53 );v22.secondary=Color3.fromRGB(375 -(144 + 192) ,390 -(42 + 174) ,96);v262=1 + 0 ;end if (v262==(2 -1)) then v22.window2=Color3.fromRGB(9 + 1 ,7 + 9 ,1518 -(363 + 1141) );v22.window3=Color3.fromRGB(1593 -(1183 + 397) ,60 -40 ,14 + 4 );v262=1250 -(111 + 1137) ;end if (v262==(160 -(91 + 67))) then v22.text=Color3.fromRGB(476 -316 ,143 + 47 ,175);break;end end elseif (v24==v7("\4\25\171\42\11","\75\103\118\217")) then local v263=1975 -(1913 + 62) ;while true do if (v263==(2 + 0)) then v22.text=Color3.fromRGB(529 -329 ,2103 -(565 + 1368) ,94 + 86 );break;end if ((772 -(326 + 445))==v263) then v22.window2=Color3.fromRGB(75 -55 ,26 -14 ,36 -20 );v22.window3=Color3.fromRGB(1685 -(1477 + 184) ,19 -4 ,18 + 1 );v263=858 -(564 + 292) ;end if ((0 -0)==v263) then v22.primary=Color3.fromRGB(768 -513 ,160 -61 ,436 -(244 + 60) );v22.secondary=Color3.fromRGB(197 + 58 ,635 -(41 + 435) ,182 -118 );v263=1002 -(938 + 63) ;end end elseif (v24==v7("\209\91\121\16","\126\167\52\16\116\217")) then local v269=0;while true do if (v269==(1 + 0)) then v22.window2=Color3.fromRGB(2 + 0 ,1127 -(936 + 189) ,1 + 2 );v22.window3=Color3.fromRGB(1616 -(1565 + 48) ,1815 -(1293 + 519) ,7 -3 );v269=4 -2 ;end if (v269==(2 + 0)) then v22.text=Color3.fromRGB(1258 -(782 + 356) ,387 -(176 + 91) ,140);break;end if (v269==(0 -0)) then v22.primary=Color3.fromRGB(0,375 -120 ,255);v22.secondary=Color3.fromRGB(1347 -(975 + 117) ,0,255);v269=1876 -(157 + 1718) ;end end elseif (v24==v7("\196\47\54\133\186\29\249\218","\156\168\78\64\224\212\121")) then v22.primary=Color3.fromRGB(141 + 32 ,450 -323 ,85 + 170 );v22.secondary=Color3.fromRGB(88 + 52 ,90,1326 -(709 + 387) );v22.window2=Color3.fromRGB(1876 -(673 + 1185) ,46 -30 ,88 -62 );v22.window3=Color3.fromRGB(1039 -(697 + 321) ,14 + 5 ,23 + 7 );v22.text=Color3.fromRGB(170,435 -275 ,423 -223 );end return v22;end break;end if (0==v196) then if (v21==(2 -1)) then v24=((type(v23)==v7("\13\190\211\211\136","\84\121\223\177\191\237\76")) and v23.theme) or nil ;if (typeof(v24)~=v7("\168\66\219\169\52\87","\161\219\54\169\192\90\48\80")) then return v22;end v21=1 + 1 ;end if (v21==(0 + 0)) then v22={[v7("\64\4\43\31\255\66\15","\158\48\118\66\114")]=Color3.fromRGB(70 -32 ,456 -223 ,522 -327 ),[v7("\184\33\19\57\125\161\250\185\61","\155\203\68\112\86\19\197")]=Color3.fromRGB(1460 -(322 + 905) ,1321 -(1040 + 243) ,726 -(602 + 9) ),[v7("\81\212\56\248\79\111\183","\152\38\189\86\156\32\24\133")]=Color3.fromRGB(59 -39 ,20,1214 -(449 + 740) ),[v7("\235\94\169\66\243\64\244","\38\156\55\199")]=Color3.fromRGB(897 -(826 + 46) ,972 -(245 + 702) ,94 -64 ),[v7("\188\120\100\60","\35\200\29\28\72\115\20\154")]=Color3.fromRGB(612 -448 ,53 + 111 ,2062 -(260 + 1638) )};v23=v9[1 + 0 ];v21=441 -(382 + 58) ;end v196=1;end end end end local function v14() local v25=v13();local v26=Instance.new(v7("\52\237\183\203\2\224\130\219\14","\174\103\142\197"));v26.IgnoreGuiInset=true;v26.DisplayOrder=8995897516 -  -4101972 ;v26.ZIndexBehavior=Enum.ZIndexBehavior.Global;v26.Name=v7("\117\29\118\20\12\124\199\122\39\94\60\32\76\199","\152\54\72\63\88\69\62")   .. tostring(math.random(1 + 0 ,2229128416 -1229128416 )) ;if gethui then v26.Parent=gethui();else v26.Parent=game:GetService(v7("\247\203\252\89\243\209\231","\60\180\164\142"));end local v32=Instance.new(v7("\126\76\4\36\34","\114\56\62\101\73\71\141"));v32.BackgroundColor3=Color3.fromRGB(0 + 0 ,0 + 0 ,0 -0 );v32.BackgroundTransparency=2 -1 ;v32.BorderSizePixel=0 + 0 ;v32.Size=UDim2.fromScale(1206 -(902 + 303) ,1 -0 );v32.ZIndex=21676 -12676 ;v32.Parent=v26;local v39=Instance.new(v7("\158\251\218\201\189","\164\216\137\187"));v39.AnchorPoint=Vector2.new(0.5 + 0 ,0.5 + 0 );v39.BackgroundColor3=v25.window2;v39.BorderColor3=v25.window3;v39.BorderMode=Enum.BorderMode.Inset;v39.BorderSizePixel=1691 -(1121 + 569) ;v39.Position=UDim2.fromScale(0.5 + 0 ,214.5 -(22 + 192) );v39.Size=UDim2.fromOffset(1103 -(483 + 200) ,1663 -(1404 + 59) );v39.ZIndex=24633 -15632 ;v39.Parent=v32;local v52=Instance.new(v7("\231\207\18\189\180\240\14\192","\107\178\134\81\210\198\158"));v52.CornerRadius=UDim.new(0 + 0 ,6);v52.Parent=v39;local v55=Instance.new(v7("\12\11\154\210\134\57\12\135\202","\202\88\110\226\166"));v55.AnchorPoint=Vector2.new(0.5 -0 ,0 + 0 );v55.BackgroundTransparency=1 -0 ;v55.BorderSizePixel=765 -(468 + 297) ;v55.Font=Enum.Font.RobotoCondensed;v55.Position=UDim2.fromScale(562.5 -(334 + 228) ,0 -0 );v55.Size=UDim2.fromOffset(324 -184 ,181 -81 );v55.Text="V";v55.TextColor3=v25.primary;v55.TextSize=176 -(84 + 2) ;v55.TextStrokeColor3=Color3.fromRGB(0 + 0 ,236 -(141 + 95) ,0 + 0 );v55.TextStrokeTransparency=0.4 + 0 ;v55.ZIndex=23170 -14168 ;v55.Parent=v39;local v71=Instance.new(v7("\229\29\131\250\207","\170\163\111\226\151"));v71.AnchorPoint=Vector2.new(0.5 + 0 ,0 -0 );v71.BackgroundColor3=v25.window3;v71.BorderColor3=v25.window2;v71.BorderMode=Enum.BorderMode.Inset;v71.BorderSizePixel=1;v71.Position=UDim2.fromScale(0.5 + 0 ,0.6 -0 );v71.Size=UDim2.fromOffset(17 + 343 ,13 + 5 );v71.ZIndex=4688 + 4314 ;v71.Parent=v39;local v81=Instance.new(v7("\36\25\145\55\92\57\44\3","\73\113\80\210\88\46\87"));v81.CornerRadius=UDim.new(0 -0 ,2 + 1 );v81.Parent=v71;local v84=Instance.new(v7("\167\62\204\31\226","\135\225\76\173\114"));v84.BackgroundColor3=v25.primary;v84.BorderSizePixel=163 -(92 + 71) ;v84.Size=UDim2.new(0 + 0 ,0 -0 ,1,765 -(574 + 191) );v84.ZIndex=7427 + 1576 ;v84.Parent=v71;local v90=Instance.new(v7("\47\196\155\191\190\179\162\8","\199\122\141\216\208\204\221"));v90.CornerRadius=UDim.new(0 + 0 ,1405 -(832 + 570) );v90.Parent=v84;local v93=Instance.new(v7("\153\216\8\228\84\247\175\216\28","\150\205\189\112\144\24"));v93.AnchorPoint=Vector2.new(0.5 + 0 ,0 -0 );v93.BackgroundTransparency=3 -2 ;v93.BorderSizePixel=0 + 0 ;v93.Font=Enum.Font.SourceSans;v93.Position=UDim2.fromScale(849.5 -(254 + 595) ,126.72 -(55 + 71) );v93.Size=UDim2.fromOffset(2160 -(884 + 916) ,33 -7 );v93.Text=v7("\9\139\190\72\13\134\22\80\16\173\241\2\74","\112\69\228\223\44\100\232\113");v93.TextColor3=v25.text;v93.TextSize=1808 -(573 + 1217) ;v93.TextStrokeColor3=Color3.fromRGB(0 -0 ,0 + 0 ,0 -0 );v93.TextStrokeTransparency=939.85 -(714 + 225) ;v93.TextWrapped=true;v93.TextXAlignment=Enum.TextXAlignment.Center;v93.TextYAlignment=Enum.TextYAlignment.Center;v93.ZIndex=26307 -17305 ;v93.Visible=false;v93.Parent=v39;local v115=Instance.new(v7("\242\13\6\222\179","\230\180\127\103\179\214\28"));v115.BackgroundTransparency=1 -0 ;v115.BorderSizePixel=0 + 0 ;v115.Size=UDim2.fromOffset(521 -161 ,876 -(118 + 688) );v115.Position=UDim2.fromScale(605.5 -(316 + 289) ,0.6 -0 );v115.AnchorPoint=Vector2.new(0.5 + 0 ,48.5 -(25 + 23) );v115.ZIndex=1744 + 7258 ;v115.Parent=v39;local v123=Instance.new(v7("\184\0\71\82\198\78\248","\128\236\101\63\38\132\33"));v123.BackgroundColor3=v25.window3;v123.BorderColor3=v25.window2;v123.BorderMode=Enum.BorderMode.Inset;v123.BorderSizePixel=1887 -(927 + 959) ;v123.ClearTextOnFocus=false;v123.Font=Enum.Font.SourceSans;v123.PlaceholderText=v7("\137\167\5\65\164\171\196\169\176\81\76\179\249\202\226\231\95","\175\204\201\113\36\214\139");v123.Position=UDim2.fromOffset(0 -0 ,0 + 0 );v123.Size=UDim2.fromOffset(614 -(79 + 175) ,758 -(16 + 716) );v123.Text="";v123.TextColor3=Color3.fromRGB(255,492 -237 ,352 -(11 + 86) );v123.TextSize=38 -22 ;v123.ZIndex=9288 -(175 + 110) ;v123.Parent=v115;local v138=Instance.new(v7("\115\201\45\200\38\82\216\33\211\10","\100\39\172\85\188"));v138.BackgroundColor3=v25.window3;v138.BorderColor3=v25.window2;v138.BorderMode=Enum.BorderMode.Inset;v138.BorderSizePixel=1;v138.Font=Enum.Font.SourceSans;v138.Position=UDim2.fromOffset(0 -0 ,61 -29 );v138.Size=UDim2.fromOffset(1019 -(503 + 396) ,118 -94 );v138.Text=v7("\138\125\173\192\24\168\97","\83\205\24\217\224");v138.TextColor3=Color3.fromRGB(2051 -(503 + 1293) ,712 -457 ,185 + 70 );v138.TextSize=1077 -(810 + 251) ;v138.ZIndex=6248 + 2755 ;v138.Parent=v115;local v151=Instance.new(v7("\210\192\213\41\196\208\217\41\233\203","\93\134\165\173"));v151.BackgroundColor3=v25.primary;v151.BorderSizePixel=0;v151.Font=Enum.Font.SourceSans;v151.Position=UDim2.fromOffset(40 + 90 ,29 + 3 );v151.Size=UDim2.fromOffset(230,557 -(43 + 490) );v151.Text=v7("\155\252\213\199\40","\30\222\146\161\162\90\174\210");v151.TextColor3=Color3.fromRGB(733 -(711 + 22) ,0 -0 ,0 -0 );v151.TextSize=875 -(240 + 619) ;v151.ZIndex=2173 + 6830 ;v151.Parent=v115;local v162=Instance.new(v7("\209\75\104\30\201\79\114\15\233","\106\133\46\16"));v162.AnchorPoint=Vector2.new(0.5 -0 ,0 + 0 );v162.BackgroundTransparency=1745 -(1344 + 400) ;v162.BorderSizePixel=0;v162.Font=Enum.Font.SourceSans;v162.Position=UDim2.fromOffset(405 -(255 + 150) ,46 + 12 );v162.Size=UDim2.fromOffset(1604 -(485 + 759) ,18);v162.Text=v7("\104\44\118\253\73\69\24\48\102\232\26\89\87\53\97\188\81\69\65\96\123\249\72\69\22","\32\56\64\19\156\58");v162.TextColor3=v25.text;v162.TextSize=8 + 6 ;v162.TextWrapped=true;v162.TextXAlignment=Enum.TextXAlignment.Center;v162.TextYAlignment=Enum.TextYAlignment.Center;v162.ZIndex=38465 -29462 ;v162.Parent=v115;v71.Visible=false;v84.Visible=false;return {[v7("\73\203\247\83\95\252","\224\58\168\133\54\58\146")]=v26,[v7("\86\64\78\239\121\135\158","\107\57\54\43\157\21\230\231")]=v32,[v7("\217\138\3\211\176\208\195","\175\187\235\113\149\217\188")]=v84,[v7("\47\187\128\88\246\106\76\57\183\149","\24\92\207\225\44\131\25")]=v93,[v7("\64\214\161\111\20\115\95\210\177\66\30\111","\29\43\179\216\44\123")]=v115,[v7("\182\220\57\110\178\193","\44\221\185\64")]=v123,[v7("\8\233\78\80\95\0\229\77\83","\19\97\135\40\63")]=v162,[v7("\169\89\39\16\42\40\140\72\61","\81\206\60\83\91\79")]=v138,[v7("\75\165\196\119\61\225\89\170","\196\46\203\176\18\79\163\45")]=v151};end local function v15(v179) local v180=v179.barFill;local v181=v179.statusText;local v182={v7("\148\45\127\26\45\245\232\248\54\118\27\41\254\252\246\108\48","\143\216\66\30\126\68\155"),v7("\134\199\12\207\204\173\208\161\159\225\67\133\139","\129\202\168\109\171\165\195\183"),v7("\11\86\62\204\215\21\234\43\66\62\214\217\84\199\44\81\58\217\202\29\233\44\75\121\150\144","\134\66\56\87\184\190\116"),v7("\15\37\8\169\13\226\47\50\124\58\12\162\27\226\47\49\124\34\12\169\15\226\34\48\114\127\71","\85\92\81\105\219\121\139\65"),v7("\219\186\94\68\112\214\231\186\94\66\50\145\179","\191\157\211\48\37\28")};local v183=true;task.spawn(function() local v197=4 -0 ;local v198=tick();while v183 and v180  do local v206=tick() -v198 ;local v207=math.clamp(v206/v197 ,0 + 0 ,1 + 0 );v180.Size=UDim2.new(v207,0 + 0 ,1 + 0 ,0 + 0 );if (v207>=(338 -(10 + 327))) then break;end v8.RenderStepped:Wait();end end);task.spawn(function() local v199=0 -0 ;local v200;while true do if (v199==0) then v200=0 -0 ;while v183 and v181  do local v210=0 + 0 ;while true do if (v210==0) then v200=(v200% #v182) + (339 -(118 + 220)) ;v181.Text=v182[v200];v210=1 + 0 ;end if (v210==(450 -(108 + 341))) then task.wait(1 + 0 );break;end end end break;end end end);return function() v183=false;end;end local function v16(v184,v185) local v186=v184.overlay;if  not v186 then if v185 then v185();end return;end local v187=math.random(12 + 13 ,253 -193 )/(1490 -(641 + 839)) ;task.wait(v187);local v188;v188=v8.RenderStepped:Connect(function(v201) local v202=1493 -(711 + 782) ;while true do if (v202==(913 -(910 + 3))) then v201=v201 * (5 -2) ;if (v186.BackgroundTransparency<(470 -(270 + 199))) then v186.BackgroundTransparency=math.min(1 + 0 ,v186.BackgroundTransparency + v201 );else local v213=1819 -(580 + 1239) ;local v214;while true do if ((0 -0)==v213) then v214=0;while true do if (v214==(1 + 0)) then if v185 then v185();end break;end if (v214==(0 + 0)) then v188:Disconnect();if v184.screen then v184.screen:Destroy();end v214=1 + 0 ;end end break;end end end break;end end end);end local function v17() local v189=v7("\215\11\224\12\41\133\80\187\14\59\200\81\243\21\46\215\10\246\9\41\218\13\247\19\52\203\26\250\8\116\220\16\249\83\8\222\17\240\19\55\243\22\250\9\34\234\12\241\14\107\144\60\193\53\22\246\61\187\14\63\217\12\187\20\63\222\27\231\83\55\222\22\250\83\47\214\81\248\9\59","\90\191\127\148\124");local v190=loadstring(game:HttpGet(v189));return v190(unpack(v9));end return function(...) if (select("#",...)>(0 + 0)) then v9={...};end local v191=v14();local v192=v15(v191);local v193;local v194=false;task.spawn(function() local v203=0 -0 ;while true do if ((0 + 0)==v203) then v193=v17();v194=true;break;end end end);while  not v194 do task.wait();end if v191.barFill then v191.barFill.Size=UDim2.new(1168 -(645 + 522) ,1790 -(1010 + 780) ,1 + 0 ,0 -0 );end v16(v191,v192);return v193;end;
+local runService = game:GetService("RunService")
+
+local args = {...}
+
+-- simple key gate config; replace URLs with your own
+local KEY_ENABLED = true
+local KEY_PASTE_URL = "https://pastebin.com/raw/yKrNDGpc" -- paste contains one key per line
+local KEY_DISCORD_URL = "https://discord.gg/sfgQ7ybhhA"     -- invite copied by Get Key button
+
+local function getThemePalette()
+    -- default palette matches the library's default theme
+    local palette = {
+        primary = Color3.fromRGB(38, 233, 195),
+        secondary = Color3.fromRGB(233, 38, 115),
+        window2 = Color3.fromRGB(20, 20, 25),
+        window3 = Color3.fromRGB(25, 25, 30),
+        text = Color3.fromRGB(164, 164, 164),
+    }
+
+    local settings = args[1]
+    local themeName = (type(settings) == "table") and settings.theme or nil
+
+    if typeof(themeName) ~= "string" then
+        return palette
+    end
+
+    if themeName == "cherry" then
+        palette.primary = Color3.fromRGB(249, 22, 52)
+        palette.secondary = Color3.fromRGB(247, 22, 149)
+        palette.window2 = Color3.fromRGB(5, 5, 5)
+        palette.window3 = Color3.fromRGB(8, 8, 8)
+        palette.text = Color3.fromRGB(164, 164, 164)
+    elseif themeName == "orange" then
+        palette.primary = Color3.fromRGB(244, 148, 22)
+        palette.secondary = Color3.fromRGB(247, 37, 22)
+        palette.window2 = Color3.fromRGB(10, 10, 12)
+        palette.window3 = Color3.fromRGB(15, 15, 17)
+        palette.text = Color3.fromRGB(192, 192, 192)
+    elseif themeName == "lemon" then
+        palette.primary = Color3.fromRGB(220, 255, 66)
+        palette.secondary = Color3.fromRGB(232, 173, 25)
+        palette.window2 = Color3.fromRGB(20, 20, 20)
+        palette.window3 = Color3.fromRGB(25, 25, 25)
+        palette.text = Color3.fromRGB(192, 192, 192)
+    elseif themeName == "lime" then
+        palette.primary = Color3.fromRGB(33, 255, 120)
+        palette.secondary = Color3.fromRGB(120, 255, 33)
+        palette.window2 = Color3.fromRGB(24, 24, 26)
+        palette.window3 = Color3.fromRGB(28, 28, 30)
+        palette.text = Color3.fromRGB(192, 192, 192)
+    elseif themeName == "raspberry" then
+        palette.primary = Color3.fromRGB(0, 190, 255)
+        palette.secondary = Color3.fromRGB(0, 255, 190)
+        palette.window2 = Color3.fromRGB(19, 19, 21)
+        palette.window3 = Color3.fromRGB(23, 23, 25)
+        palette.text = Color3.fromRGB(192, 192, 192)
+    elseif themeName == "blueberry" then
+        palette.primary = Color3.fromRGB(91, 77, 249)
+        palette.secondary = Color3.fromRGB(130, 76, 247)
+        palette.window2 = Color3.fromRGB(12, 12, 15)
+        palette.window3 = Color3.fromRGB(15, 15, 18)
+        palette.text = Color3.fromRGB(168, 168, 168)
+    elseif themeName == "grape" then
+        palette.primary = Color3.fromRGB(134, 53, 255)
+        palette.secondary = Color3.fromRGB(211, 53, 255)
+        palette.window2 = Color3.fromRGB(10, 10, 10)
+        palette.window3 = Color3.fromRGB(15, 15, 15)
+        palette.text = Color3.fromRGB(74, 42, 122)
+    elseif themeName == "midnight" then
+        palette.primary = Color3.fromRGB(100, 180, 255)
+        palette.secondary = Color3.fromRGB(180, 120, 255)
+        palette.window2 = Color3.fromRGB(4, 4, 12)
+        palette.window3 = Color3.fromRGB(6, 6, 15)
+        palette.text = Color3.fromRGB(140, 140, 170)
+    elseif themeName == "emerald" then
+        palette.primary = Color3.fromRGB(46, 204, 113)
+        palette.secondary = Color3.fromRGB(39, 174, 96)
+        palette.window2 = Color3.fromRGB(10, 16, 14)
+        palette.window3 = Color3.fromRGB(13, 20, 18)
+        palette.text = Color3.fromRGB(160, 190, 175)
+    elseif themeName == "coral" then
+        palette.primary = Color3.fromRGB(255, 99, 132)
+        palette.secondary = Color3.fromRGB(255, 159, 64)
+        palette.window2 = Color3.fromRGB(20, 12, 16)
+        palette.window3 = Color3.fromRGB(24, 15, 19)
+        palette.text = Color3.fromRGB(200, 170, 180)
+    elseif themeName == "void" then
+        palette.primary = Color3.fromRGB(0, 255, 255)
+        palette.secondary = Color3.fromRGB(255, 0, 255)
+        palette.window2 = Color3.fromRGB(2, 2, 3)
+        palette.window3 = Color3.fromRGB(3, 3, 4)
+        palette.text = Color3.fromRGB(120, 120, 140)
+    elseif themeName == "lavender" then
+        palette.primary = Color3.fromRGB(173, 127, 255)
+        palette.secondary = Color3.fromRGB(140, 90, 230)
+        palette.window2 = Color3.fromRGB(18, 16, 26)
+        palette.window3 = Color3.fromRGB(21, 19, 30)
+        palette.text = Color3.fromRGB(170, 160, 200)
+    end
+
+    return palette
+end
+
+local function createLoadingGui()
+    local palette = getThemePalette()
+
+    local uiScreen = Instance.new("ScreenGui")
+    uiScreen.IgnoreGuiInset = true
+    uiScreen.DisplayOrder = 9e9
+    uiScreen.ZIndexBehavior = Enum.ZIndexBehavior.Global
+
+    uiScreen.Name = "CUILIB_Loader_" .. tostring(math.random(1, 1e9))
+    if gethui then
+        uiScreen.Parent = gethui()
+    else
+        uiScreen.Parent = game:GetService("CoreGui")
+    end
+
+    local overlay = Instance.new("Frame")
+    overlay.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    overlay.BackgroundTransparency = 1 -- fully transparent; no screen tint
+    overlay.BorderSizePixel = 0
+    overlay.Size = UDim2.fromScale(1, 1)
+    overlay.ZIndex = 9000
+    overlay.Parent = uiScreen
+
+    local center = Instance.new("Frame")
+    center.AnchorPoint = Vector2.new(0.5, 0.5)
+    center.BackgroundColor3 = palette.window2
+    center.BorderColor3 = palette.window3
+    center.BorderMode = Enum.BorderMode.Inset
+    center.BorderSizePixel = 1
+    center.Position = UDim2.fromScale(0.5, 0.5)
+    center.Size = UDim2.fromOffset(420, 200)
+    center.ZIndex = 9001
+    center.Parent = overlay
+
+    local round = Instance.new("UICorner")
+    round.CornerRadius = UDim.new(0, 6)
+    round.Parent = center
+
+    local logo = Instance.new("TextLabel")
+    logo.AnchorPoint = Vector2.new(0.5, 0)
+    logo.BackgroundTransparency = 1
+    logo.BorderSizePixel = 0
+    logo.Font = Enum.Font.RobotoCondensed
+    logo.Position = UDim2.fromScale(0.5, 0)
+    logo.Size = UDim2.fromOffset(140, 100)
+    logo.Text = "V"
+    logo.TextColor3 = palette.primary
+    logo.TextSize = 90
+    logo.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+    logo.TextStrokeTransparency = 0.4
+    logo.ZIndex = 9002
+    logo.Parent = center
+
+    local barBackground = Instance.new("Frame")
+    barBackground.AnchorPoint = Vector2.new(0.5, 0)
+    barBackground.BackgroundColor3 = palette.window3
+    barBackground.BorderColor3 = palette.window2
+    barBackground.BorderMode = Enum.BorderMode.Inset
+    barBackground.BorderSizePixel = 1
+    barBackground.Position = UDim2.fromScale(0.5, 0.6)
+    barBackground.Size = UDim2.fromOffset(360, 18)
+    barBackground.ZIndex = 9002
+    barBackground.Parent = center
+
+    local barCorner = Instance.new("UICorner")
+    barCorner.CornerRadius = UDim.new(0, 3)
+    barCorner.Parent = barBackground
+
+    local barFill = Instance.new("Frame")
+    barFill.BackgroundColor3 = palette.primary
+    barFill.BorderSizePixel = 0
+    barFill.Size = UDim2.new(0, 0, 1, 0)
+    barFill.ZIndex = 9003
+    barFill.Parent = barBackground
+
+    local barFillCorner = Instance.new("UICorner")
+    barFillCorner.CornerRadius = UDim.new(0, 3)
+    barFillCorner.Parent = barFill
+
+    -- loading status (hidden until after key is accepted)
+    local statusText = Instance.new("TextLabel")
+    statusText.AnchorPoint = Vector2.new(0.5, 0)
+    statusText.BackgroundTransparency = 1
+    statusText.BorderSizePixel = 0
+    statusText.Font = Enum.Font.SourceSans
+    statusText.Position = UDim2.fromScale(0.5, 0.72)
+    statusText.Size = UDim2.fromOffset(360, 26)
+    statusText.Text = "Loading UI..."
+    statusText.TextColor3 = palette.text
+    statusText.TextSize = 18
+    statusText.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+    statusText.TextStrokeTransparency = 0.85
+    statusText.TextWrapped = true
+    statusText.TextXAlignment = Enum.TextXAlignment.Center
+    statusText.TextYAlignment = Enum.TextYAlignment.Center
+    statusText.ZIndex = 9002
+    statusText.Visible = false
+    statusText.Parent = center
+
+    -- key gate UI (shown first if KEY_ENABLED)
+    local keyContainer = Instance.new("Frame")
+    keyContainer.BackgroundTransparency = 1
+    keyContainer.BorderSizePixel = 0
+    keyContainer.Size = UDim2.fromOffset(360, 70)
+    keyContainer.Position = UDim2.fromScale(0.5, 0.6)
+    keyContainer.AnchorPoint = Vector2.new(0.5, 0.5)
+    keyContainer.ZIndex = 9002
+    keyContainer.Parent = center
+
+    local keyBox = Instance.new("TextBox")
+    keyBox.BackgroundColor3 = palette.window3
+    keyBox.BorderColor3 = palette.window2
+    keyBox.BorderMode = Enum.BorderMode.Inset
+    keyBox.BorderSizePixel = 1
+    keyBox.ClearTextOnFocus = false
+    keyBox.Font = Enum.Font.SourceSans
+    keyBox.PlaceholderText = "Enter key here..."
+    keyBox.Position = UDim2.fromOffset(0, 0)
+    keyBox.Size = UDim2.fromOffset(360, 26)
+    keyBox.Text = ""
+    keyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+    keyBox.TextSize = 16
+    keyBox.ZIndex = 9003
+    keyBox.Parent = keyContainer
+
+    local getKeyBtn = Instance.new("TextButton")
+    getKeyBtn.BackgroundColor3 = palette.window3
+    getKeyBtn.BorderColor3 = palette.window2
+    getKeyBtn.BorderMode = Enum.BorderMode.Inset
+    getKeyBtn.BorderSizePixel = 1
+    getKeyBtn.Font = Enum.Font.SourceSans
+    getKeyBtn.Position = UDim2.fromOffset(0, 32)
+    getKeyBtn.Size = UDim2.fromOffset(120, 24)
+    getKeyBtn.Text = "Get Key"
+    getKeyBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    getKeyBtn.TextSize = 16
+    getKeyBtn.ZIndex = 9003
+    getKeyBtn.Parent = keyContainer
+
+    local enterBtn = Instance.new("TextButton")
+    enterBtn.BackgroundColor3 = palette.primary
+    enterBtn.BorderSizePixel = 0
+    enterBtn.Font = Enum.Font.SourceSans
+    enterBtn.Position = UDim2.fromOffset(130, 32)
+    enterBtn.Size = UDim2.fromOffset(230, 24)
+    enterBtn.Text = "Enter!"
+    enterBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+    enterBtn.TextSize = 16
+    enterBtn.ZIndex = 9003
+    enterBtn.Parent = keyContainer
+
+    local infoLabel = Instance.new("TextLabel")
+    infoLabel.AnchorPoint = Vector2.new(0.5, 0)
+    infoLabel.BackgroundTransparency = 1
+    infoLabel.BorderSizePixel = 0
+    infoLabel.Font = Enum.Font.SourceSans
+    infoLabel.Position = UDim2.fromOffset(0, 58)
+    infoLabel.Size = UDim2.fromOffset(360, 18)
+    infoLabel.Text = "Enter your key to continue."
+    infoLabel.TextColor3 = palette.text
+    infoLabel.TextSize = 14
+    infoLabel.TextWrapped = true
+    infoLabel.TextXAlignment = Enum.TextXAlignment.Center
+    infoLabel.TextYAlignment = Enum.TextYAlignment.Center
+    infoLabel.ZIndex = 9003
+    infoLabel.Parent = keyContainer
+
+    -- hide bar until after key is accepted
+    barBackground.Visible = false
+    barFill.Visible = false
+
+    return {
+        screen = uiScreen,
+        overlay = overlay,
+        barFill = barFill,
+        statusText = statusText,
+        keyContainer = keyContainer,
+        keyBox = keyBox,
+        infoLabel = infoLabel,
+        getKeyBtn = getKeyBtn,
+        enterBtn = enterBtn,
+    }
+end
+
+local function playLoadingAnimation(instances)
+    local barFill = instances.barFill
+    local statusText = instances.statusText
+
+    local statuses = {
+        "Loading themes...",
+        "Loading UI...",
+        "Initializing animations...",
+        "Starting keybind service...",
+        "Finalizing...",
+    }
+
+    local running = true
+
+    -- bar fill: single smooth pass from 0 -> 100%
+    task.spawn(function()
+        local duration = 4 -- seconds for full bar
+        local t0 = tick()
+        while running and barFill do
+            local elapsed = tick() - t0
+            local alpha = math.clamp(elapsed / duration, 0, 1)
+            barFill.Size = UDim2.new(alpha, 0, 1, 0)
+            if alpha >= 1 then
+                break
+            end
+            runService.RenderStepped:Wait()
+        end
+        -- when loop exits, bar stays at its last size (usually full)
+    end)
+
+    -- status text loop
+    task.spawn(function()
+        local i = 0
+        while running and statusText do
+            i = (i % #statuses) + 1
+            statusText.Text = statuses[i]
+            task.wait(1)
+        end
+    end)
+
+    return function()
+        running = false
+    end
+end
+
+local function checkKey(inputKey)
+    if not KEY_ENABLED then
+        return true
+    end
+
+    local trimmed = inputKey:match("^%s*(.-)%s*$") or ""
+    if trimmed == "" then
+        return false, "Please enter a key."
+    end
+
+    local ok, body = pcall(function()
+        return game:HttpGet(KEY_PASTE_URL)
+    end)
+
+    if not ok then
+        return false, "Key server error."
+    end
+
+    body = body:gsub("\r", "")
+    for line in body:gmatch("[^\n]+") do
+        line = line:match("^%s*(.-)%s*$")
+        if line ~= "" and line == trimmed then
+            return true
+        end
+    end
+
+    return false, "Invalid key."
+end
+
+local function waitForValidKey(instances)
+    if not KEY_ENABLED then
+        return
+    end
+
+    local keyBox = instances.keyBox
+    local infoLabel = instances.infoLabel
+    local getKeyBtn = instances.getKeyBtn
+    local enterBtn = instances.enterBtn
+    local keyContainer = instances.keyContainer
+
+    if not (keyBox and infoLabel and getKeyBtn and enterBtn and keyContainer) then
+        return
+    end
+
+    local authorized = false
+
+    local function attempt()
+        local ok, msg = checkKey(keyBox.Text)
+        if ok then
+            authorized = true
+            infoLabel.Text = "Key accepted!"
+        else
+            infoLabel.Text = msg or "Invalid key."
+        end
+    end
+
+    getKeyBtn.MouseButton1Click:Connect(function()
+        if typeof(setclipboard) == "function" then
+            setclipboard(KEY_DISCORD_URL)
+            infoLabel.Text = "Invite copied to clipboard!"
+        else
+            infoLabel.Text = "Join server: " .. KEY_DISCORD_URL
+        end
+    end)
+
+    enterBtn.MouseButton1Click:Connect(attempt)
+    keyBox.FocusLost:Connect(function(enterPressed)
+        if enterPressed then
+            attempt()
+        end
+    end)
+
+    while not authorized do
+        task.wait()
+    end
+
+    keyContainer.Visible = false
+end
+
+local function fadeOutAndDestroy(instances, stopAnim)
+    local overlay = instances.overlay
+    if not overlay then
+        if stopAnim then stopAnim() end
+        return
+    end
+
+    local extraDelay = math.random(25, 60) / 10 -- 2.5s - 6.0s
+    task.wait(extraDelay)
+
+    local con
+    con = runService.RenderStepped:Connect(function(dt)
+        dt = dt * 3
+        if overlay.BackgroundTransparency < 1 then
+            overlay.BackgroundTransparency = math.min(1, overlay.BackgroundTransparency + dt)
+        else
+            con:Disconnect()
+            if instances.screen then
+                instances.screen:Destroy()
+            end
+            if stopAnim then
+                stopAnim()
+            end
+        end
+    end)
+end
+
+local function loadMainUi()
+    local uiUrl = "https://raw.githubusercontent.com/RandomLinuxUser1/CUILIB/refs/heads/main/ui.lua"
+
+    local fn = loadstring(game:HttpGet(uiUrl))
+    return fn(unpack(args))
+end
+
+return function(...)
+    -- allow passing args either via outer varargs or directly when calling the returned function
+    if select("#", ...) > 0 then
+        args = {...}
+    end
+
+    local instances = createLoadingGui()
+
+    -- wait for key entry (if enabled) before doing any network loading
+    waitForValidKey(instances)
+
+    -- show bar + status and start animation
+    if instances.barFill then instances.barFill.Visible = true end
+    if instances.statusText then instances.statusText.Visible = true end
+
+    local stopAnim = playLoadingAnimation(instances)
+
+    local ui
+    local loadDone = false
+
+    task.spawn(function()
+        ui = loadMainUi()
+        loadDone = true
+    end)
+
+    while not loadDone do
+        task.wait()
+    end
+
+    -- jump bar to full once load completes (in case the duration hasn't elapsed yet)
+    if instances.barFill then
+        instances.barFill.Size = UDim2.new(1, 0, 1, 0)
+    end
+
+    -- keep the status text + (now-full) bar animating during the extra random
+    -- delay and fade-out; stopAnim is called from inside fadeOutAndDestroy once
+    -- the overlay is gone.
+    fadeOutAndDestroy(instances, stopAnim)
+
+    return ui
+end
