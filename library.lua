@@ -492,6 +492,15 @@ local loading = {} do
         centerContainer.ZIndex = 9001
 
         centerContainer.Parent = overlay
+
+        if rounding then
+            local round = Instance.new('UICorner') do
+                round.CornerRadius = UDim.new(0, 6)
+                round.Name = '#round'
+
+                round.Parent = centerContainer
+            end
+        end
     end
 
     local logo = Instance.new('TextLabel') do
@@ -605,6 +614,7 @@ end
 
 loading.active = false
 loading.finished = false
+loading.autoStopped = false
 
 function loading.start()
     if (loading.active) then return end
@@ -705,6 +715,7 @@ function loading.stop()
         overlay:Destroy()
         loading.instances = nil
         loading.finished = true
+        loading.autoStopped = true
 
         -- after loading box is gone, reveal any hidden windows with a simple fade-in
         if ui and ui.windows then
@@ -1971,17 +1982,29 @@ do
                 else
                     instances.resizeHandle.Visible = false
                 end
-                -- finalize stuff
-                instances.mainFrame.Parent = uiScreen
+        -- finalize stuff
+        instances.mainFrame.Parent = uiScreen
 
-                -- if loading splash is active, keep window hidden until loading completes
-                if loading and (loading.active or not loading.finished) then
-                    instances.mainFrame.Visible = false
-                end
+        -- if loading splash is active, keep window hidden until loading completes
+        if loading and (loading.active or not loading.finished) then
+            instances.mainFrame.Visible = false
+        end
 
-                new.instances = instances
-                return new
-            end
+        new.instances = instances
+
+        -- ensure the library itself drives the loading flow: after the first
+        -- window is created while loading is active, automatically stop loading
+        -- so the splash fades out and the UI fades in even if the caller
+        -- never touches ui.hideLoading().
+        if loading and loading.active and not loading.autoStopped then
+            loading.autoStopped = true
+            task.spawn(function()
+                loading.stop()
+            end)
+        end
+
+        return new
+    end
             window.minimize = function(self) 
                 local newState = not self.minimized
                 local mf = self.instances.mainFrame
