@@ -112,7 +112,11 @@ local function playLoadingAnimation(instances)
     local statusText = instances.statusText
 
     local statuses = {
-        "Loading...",
+        "Loading themes...",
+        "Loading UI...",
+        "Initializing Animations...",
+        "Starting keybind service...",
+        "Finalizing...",
     }
 
     local running = true
