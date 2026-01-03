@@ -652,6 +652,10 @@ function loading.stop()
     if (not overlay) then return end
 
     task.spawn(function()
+        -- random fake delay so the loading animation feels more substantial
+        local extraDelay = math.random(8, 20) / 10 -- 0.8s - 2.0s
+        task.wait(extraDelay)
+
         local backgroundTransparency = {}
         local textTransparency = {}
 
