@@ -1985,9 +1985,15 @@ do
         -- finalize stuff
         instances.mainFrame.Parent = uiScreen
 
-        -- keep behavior identical to the original UI: windows are visible as soon as
-        -- they are created. The loading overlay itself will cover them until it is
-        -- stopped, so we do not force mainFrame.Visible = false here.
+        -- if the loading splash is active or not yet finished, keep this window
+        -- hidden for now. It will be revealed (with a fade-in) by loading.stop()
+        -- after its randomized delay.
+        if loading and (loading.active or not loading.finished) then
+            instances.mainFrame.Visible = false
+        else
+            instances.mainFrame.Visible = true
+        end
+
         new.instances = instances
 
         return new
