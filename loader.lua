@@ -1,4 +1,4 @@
--- Loader for CUILIB
+-- Loader for Vextrum
 
 local runService = game:GetService("RunService")
 
