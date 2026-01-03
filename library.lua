@@ -1985,23 +1985,10 @@ do
         -- finalize stuff
         instances.mainFrame.Parent = uiScreen
 
-        -- if loading splash is active, keep window hidden until loading completes
-        if loading and (loading.active or not loading.finished) then
-            instances.mainFrame.Visible = false
-        end
-
+        -- keep behavior identical to the original UI: windows are visible as soon as
+        -- they are created. The loading overlay itself will cover them until it is
+        -- stopped, so we do not force mainFrame.Visible = false here.
         new.instances = instances
-
-        -- ensure the library itself drives the loading flow: after the first
-        -- window is created while loading is active, automatically stop loading
-        -- so the splash fades out and the UI fades in even if the caller
-        -- never touches ui.hideLoading().
-        if loading and loading.active and not loading.autoStopped then
-            loading.autoStopped = true
-            task.spawn(function()
-                loading.stop()
-            end)
-        end
 
         return new
     end
