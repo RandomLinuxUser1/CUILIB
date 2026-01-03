@@ -1,10 +1,106 @@
 -- Loader for CUILIB
-print("Loading ts")
+
 local runService = game:GetService("RunService")
 
 local args = {...}
 
+local function getThemePalette()
+    -- default palette matches the library's default theme
+    local palette = {
+        primary = Color3.fromRGB(38, 233, 195),
+        secondary = Color3.fromRGB(233, 38, 115),
+        window2 = Color3.fromRGB(20, 20, 25),
+        window3 = Color3.fromRGB(25, 25, 30),
+        text = Color3.fromRGB(164, 164, 164),
+    }
+
+    local settings = args[1]
+    local themeName = (type(settings) == "table") and settings.theme or nil
+
+    if typeof(themeName) ~= "string" then
+        return palette
+    end
+
+    if themeName == "cherry" then
+        palette.primary = Color3.fromRGB(249, 22, 52)
+        palette.secondary = Color3.fromRGB(247, 22, 149)
+        palette.window2 = Color3.fromRGB(5, 5, 5)
+        palette.window3 = Color3.fromRGB(8, 8, 8)
+        palette.text = Color3.fromRGB(164, 164, 164)
+    elseif themeName == "orange" then
+        palette.primary = Color3.fromRGB(244, 148, 22)
+        palette.secondary = Color3.fromRGB(247, 37, 22)
+        palette.window2 = Color3.fromRGB(10, 10, 12)
+        palette.window3 = Color3.fromRGB(15, 15, 17)
+        palette.text = Color3.fromRGB(192, 192, 192)
+    elseif themeName == "lemon" then
+        palette.primary = Color3.fromRGB(220, 255, 66)
+        palette.secondary = Color3.fromRGB(232, 173, 25)
+        palette.window2 = Color3.fromRGB(20, 20, 20)
+        palette.window3 = Color3.fromRGB(25, 25, 25)
+        palette.text = Color3.fromRGB(192, 192, 192)
+    elseif themeName == "lime" then
+        palette.primary = Color3.fromRGB(33, 255, 120)
+        palette.secondary = Color3.fromRGB(120, 255, 33)
+        palette.window2 = Color3.fromRGB(24, 24, 26)
+        palette.window3 = Color3.fromRGB(28, 28, 30)
+        palette.text = Color3.fromRGB(192, 192, 192)
+    elseif themeName == "raspberry" then
+        palette.primary = Color3.fromRGB(0, 190, 255)
+        palette.secondary = Color3.fromRGB(0, 255, 190)
+        palette.window2 = Color3.fromRGB(19, 19, 21)
+        palette.window3 = Color3.fromRGB(23, 23, 25)
+        palette.text = Color3.fromRGB(192, 192, 192)
+    elseif themeName == "blueberry" then
+        palette.primary = Color3.fromRGB(91, 77, 249)
+        palette.secondary = Color3.fromRGB(130, 76, 247)
+        palette.window2 = Color3.fromRGB(12, 12, 15)
+        palette.window3 = Color3.fromRGB(15, 15, 18)
+        palette.text = Color3.fromRGB(168, 168, 168)
+    elseif themeName == "grape" then
+        palette.primary = Color3.fromRGB(134, 53, 255)
+        palette.secondary = Color3.fromRGB(211, 53, 255)
+        palette.window2 = Color3.fromRGB(10, 10, 10)
+        palette.window3 = Color3.fromRGB(15, 15, 15)
+        palette.text = Color3.fromRGB(74, 42, 122)
+    elseif themeName == "midnight" then
+        palette.primary = Color3.fromRGB(100, 180, 255)
+        palette.secondary = Color3.fromRGB(180, 120, 255)
+        palette.window2 = Color3.fromRGB(4, 4, 12)
+        palette.window3 = Color3.fromRGB(6, 6, 15)
+        palette.text = Color3.fromRGB(140, 140, 170)
+    elseif themeName == "emerald" then
+        palette.primary = Color3.fromRGB(46, 204, 113)
+        palette.secondary = Color3.fromRGB(39, 174, 96)
+        palette.window2 = Color3.fromRGB(10, 16, 14)
+        palette.window3 = Color3.fromRGB(13, 20, 18)
+        palette.text = Color3.fromRGB(160, 190, 175)
+    elseif themeName == "coral" then
+        palette.primary = Color3.fromRGB(255, 99, 132)
+        palette.secondary = Color3.fromRGB(255, 159, 64)
+        palette.window2 = Color3.fromRGB(20, 12, 16)
+        palette.window3 = Color3.fromRGB(24, 15, 19)
+        palette.text = Color3.fromRGB(200, 170, 180)
+    elseif themeName == "void" then
+        palette.primary = Color3.fromRGB(0, 255, 255)
+        palette.secondary = Color3.fromRGB(255, 0, 255)
+        palette.window2 = Color3.fromRGB(2, 2, 3)
+        palette.window3 = Color3.fromRGB(3, 3, 4)
+        palette.text = Color3.fromRGB(120, 120, 140)
+    elseif themeName == "lavender" then
+        palette.primary = Color3.fromRGB(173, 127, 255)
+        palette.secondary = Color3.fromRGB(140, 90, 230)
+        palette.window2 = Color3.fromRGB(18, 16, 26)
+        palette.window3 = Color3.fromRGB(21, 19, 30)
+        palette.text = Color3.fromRGB(170, 160, 200)
+    end
+
+    return palette
+end
+
 local function createLoadingGui()
+    local palette = getThemePalette()
+
     local uiScreen = Instance.new("ScreenGui")
     uiScreen.IgnoreGuiInset = true
     uiScreen.DisplayOrder = 9e9
@@ -27,8 +123,8 @@ local function createLoadingGui()
 
     local center = Instance.new("Frame")
     center.AnchorPoint = Vector2.new(0.5, 0.5)
-    center.BackgroundColor3 = Color3.fromRGB(10, 10, 14)
-    center.BorderColor3 = Color3.fromRGB(40, 40, 60)
+    center.BackgroundColor3 = palette.window2
+    center.BorderColor3 = palette.window3
     center.BorderMode = Enum.BorderMode.Inset
     center.BorderSizePixel = 1
     center.Position = UDim2.fromScale(0.5, 0.5)
@@ -48,7 +144,7 @@ local function createLoadingGui()
     logo.Position = UDim2.fromScale(0.5, 0)
     logo.Size = UDim2.fromOffset(140, 100)
     logo.Text = "V"
-    logo.TextColor3 = Color3.fromRGB(100, 220, 255)
+    logo.TextColor3 = palette.primary
     logo.TextSize = 90
     logo.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
     logo.TextStrokeTransparency = 0.4
@@ -57,8 +153,8 @@ local function createLoadingGui()
 
     local barBackground = Instance.new("Frame")
     barBackground.AnchorPoint = Vector2.new(0.5, 0)
-    barBackground.BackgroundColor3 = Color3.fromRGB(20, 20, 26)
-    barBackground.BorderColor3 = Color3.fromRGB(50, 50, 70)
+    barBackground.BackgroundColor3 = palette.window3
+    barBackground.BorderColor3 = palette.window2
     barBackground.BorderMode = Enum.BorderMode.Inset
     barBackground.BorderSizePixel = 1
     barBackground.Position = UDim2.fromScale(0.5, 0.6)
@@ -71,7 +167,7 @@ local function createLoadingGui()
     barCorner.Parent = barBackground
 
     local barFill = Instance.new("Frame")
-    barFill.BackgroundColor3 = Color3.fromRGB(100, 220, 255)
+    barFill.BackgroundColor3 = palette.primary
     barFill.BorderSizePixel = 0
     barFill.Size = UDim2.new(0, 0, 1, 0)
     barFill.ZIndex = 9003
@@ -89,7 +185,7 @@ local function createLoadingGui()
     statusText.Position = UDim2.fromScale(0.5, 0.72)
     statusText.Size = UDim2.fromOffset(360, 26)
     statusText.Text = "Loading UI..."
-    statusText.TextColor3 = Color3.fromRGB(180, 180, 200)
+    statusText.TextColor3 = palette.text
     statusText.TextSize = 18
     statusText.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
     statusText.TextStrokeTransparency = 0.85
